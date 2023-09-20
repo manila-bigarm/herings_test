@@ -8,7 +8,10 @@ function App() {
     useEffect(() => {
         TagManager.initialize({
             gtmId: "",
-            user_id: "user1234",
+            dataLayer: {
+                event: "user_id",
+                value: "user1234",
+            },
         });
     }, []);
     return (
