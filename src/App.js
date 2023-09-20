@@ -7,7 +7,7 @@ import { useEffect } from "react";
 function App() {
     useEffect(() => {
         TagManager.initialize({
-            gtmId: "",
+            gtmId: "GTM-WJ4JK6DX",
             dataLayer: {
                 event: "user_id",
                 value: "user1234",
