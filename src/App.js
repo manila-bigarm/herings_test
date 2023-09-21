@@ -26,15 +26,16 @@ function App() {
                     Edit <code>src/App.js</code> and save to reload.
                 </p>
                 <div
-                    onClick={() =>
+                    onClick={() => {
                         TagManager.dataLayer({
                             gtmId: "GTM-WJ4JK6DX",
                             dataLayer: {
                                 event: "test_event",
                                 value: "im a test",
                             },
-                        })
-                    }
+                        });
+                        console.log("im sent");
+                    }}
                 >
                     Click Me to send event
                 </div>
