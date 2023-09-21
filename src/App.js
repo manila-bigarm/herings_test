@@ -10,16 +10,29 @@ function App() {
             window.flutter_inappwebview
                 .callHandler("get_client_id")
                 .then((args) => {
-                    alert(args);
+                    TagManager.initialize({
+                        gtmId: "GTM-WJ4JK6DX",
+                        dataLayer: {
+                            client_id: args,
+                        },
+                    });
                 });
+        } else {
+            TagManager.initialize({
+                gtmId: "GTM-WJ4JK6DX",
+                dataLayer: {
+                    client_id: "noCid",
+                },
+            });
         }
-        TagManager.initialize({
+        TagManager.dataLayer({
             gtmId: "GTM-WJ4JK6DX",
             dataLayer: {
                 event: "user_id",
-                value: "user1234",
+                value: "user_5678",
             },
         });
+
         if (window.flutter_inappwebview) {
             window.flutter_inappwebview.callHandler("user_id", "user1234");
         }
