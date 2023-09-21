@@ -1,4 +1,4 @@
-import logo from "./logo.svg";
+import logo from "./cropped.gif";
 import "./App.css";
 
 import TagManager from "react-gtm-module";
@@ -17,18 +17,24 @@ function App() {
     return (
         <div className="App">
             <header className="App-header">
-                <img src={logo} className="App-logo" alt="logo" />
+                <img src={logo} alt="logo" />
+
                 <p>
                     Edit <code>src/App.js</code> and save to reload.
                 </p>
-                <a
-                    className="App-link"
-                    href="https://reactjs.org"
-                    target="_blank"
-                    rel="noopener noreferrer"
+                <div
+                    onClick={() =>
+                        TagManager.dataLayer({
+                            gtmId: "GTM-WJ4JK6DX",
+                            dataLayer: {
+                                event: "test_event",
+                                value: "im a test",
+                            },
+                        })
+                    }
                 >
-                    Learn React
-                </a>
+                    Click Me to send event
+                </div>
             </header>
         </div>
     );
