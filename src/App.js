@@ -13,6 +13,9 @@ function App() {
                 value: "user1234",
             },
         });
+        if (window.flutter_inappwebview) {
+            window.flutter_inappwebview.callHandler("user_id", "user1234");
+        }
     }, []);
     return (
         <div className="App">
