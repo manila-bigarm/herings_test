@@ -6,6 +6,13 @@ import { useEffect } from "react";
 
 function App() {
     useEffect(() => {
+        if (window.flutter_inappwebview) {
+            window.flutter_inappwebview
+                .callHandler("get_client_id")
+                .then((args) => {
+                    alert(args);
+                });
+        }
         TagManager.initialize({
             gtmId: "GTM-WJ4JK6DX",
             dataLayer: {
