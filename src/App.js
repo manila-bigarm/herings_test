@@ -29,12 +29,12 @@ function App() {
             gtmId: "GTM-WJ4JK6DX",
             dataLayer: {
                 event: "user_id",
-                value: "user_5678",
+                value: "user_final",
             },
         });
 
         if (window.flutter_inappwebview) {
-            window.flutter_inappwebview.callHandler("user_id", "user1234");
+            window.flutter_inappwebview.callHandler("user_id", "user_final");
         }
     }, []);
     return (
